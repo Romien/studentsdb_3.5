@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+ <html lang=”uk”>
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" value="Система Обліку Студентів Навчального Закладу" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ PORTAL_URL }}{% static "css/main.css" %}">
+    
+    <title>Сервіс Обліку Студентів - {% block meta_title %} {% endblock meta_title %}</title>
+    {% block extra_css %}{% endblock extra_css %}
+</head>
+
+<body>
+
+    <!-- Start Container -->
+    <div class="container">
+
+        <!-- Start Header -->
+        <div class="row" id="header">
+            <!-- Logo -->
+            <div class="col-8"><h1>Сервіс Обліку Студентів</h1></div>{% block logo %}{% endblock logo %}
+            
+            {% block group_selector %}
+            <div class="col-4" id="group-selector">
+                <strong>Група:</strong>
+                <select>
+                    <option value="">Усі студенти</option>
+                    {% for group in groups %}
+                    <option value="">{{ group.name }} {{ group.leader.name }}</option>
+                    {% endfor %}
+                    
+                </select>
+            </div>
+            {% endblock group_selector %}    
+
+        </div>
+        <!-- End Header -->
+
+        <!-- Start Subheader -->
+        <div class="row" id="sub-header">
+            <div class="col-12">
+                <ul class="nav nav-tabs">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="{% url "home" %}">Студенти</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url "journal" %}">Відвідування</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url "groups_list" %}">Групи</a>
+                  </li>
+                </ul>
+            </div>
+        </div>     
+         <!-- End Subheader -->
+    
+
+        <!-- Start Content Columns -->           
+        <div class="row" id="content-columns">
+            <div class="col-12" id="content-columns">
+                
+                {% comment "Not used alert so far" %}
+                <div class="alert alert-warning" role="alert">
+                    Студент успішно доданий 
+                </div>
+                {% endcomment %}
+
+                <h2>{% block title %}{% endblock title %}</h2>
+                {% block content %}{% endblock content %}
+                
+               
+
+            </div>
+        </div>
+        <!-- End Content Columns -->  
+
+        
+
+        <!-- Start Footer --> 
+        {% block footer %}
+        <div class="row" id=footer">
+            <div class="col-12" id="footer">
+                &copy;2018 Сервіс Обліку Студентів
+            </div>
+        </div>
+        {% endblock footer %}
+
+        <!-- End Footer -->             
+
+
+
+    </div>
+    <!-- End Container -->
+    
+
+<!-- JavaScript Inclusion -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
+</body>
+
+</html>

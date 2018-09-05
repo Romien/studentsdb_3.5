@@ -12,12 +12,43 @@ Class-based views
 Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
+
 """
+
+
 from django.conf.urls import url
 from django.contrib import admin
-from students.views import student_list
+from students import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 
 urlpatterns = [
-    url(r'^$', student_list),
+    # Students urls
+    url(r'^$', views.students_list, name='home'),
+    url(r'^students/add/$', views.students_add, name='students_add'),
+    url(r'^students/(?P<sid>[0-9]+)/edit/$',
+        views.students_edit, name='students_edit'),
+
+    url(r'^students/(?P<sid>[0-9]+)/attend/$',
+        views.students_attend, name='students_attend'),
+    url(r'^students/(?P<sid>[0-9]+)/delete/$',
+        views.students_delete, name='students_delete'),
+
+
+    # Groups urls
+    url(r'^groups/$', views.groups_list, name='groups_list'),
+    url(r'^groups/add/$', views.groups_add, name='groups_add'),
+    url(r'^groups/(?P<gid>[0-9]+)/edit/$',
+        views.groups_edit, name='groups_edit'),
+    url(r'^groups/(?P<gid>[0-9]+)/delete/$',
+        views.groups_delete, name='groups_delete'),
+
+    # Journal urls
+    url(r'^journal/$', views.journal, name='journal'),
+
+
     url(r'^admin/', admin.site.urls),
+
 ]
+
+urlpatterns += staticfiles_urlpatterns()

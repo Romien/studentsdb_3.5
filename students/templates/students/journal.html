@@ -1,0 +1,281 @@
+{% extends "students/base.html" %}
+
+{% load static %}
+
+{% block meta_title %}Облік Відвідування{% endblock meta_title %}
+
+{% block title %}Облік Відвідування{% endblock title %}
+
+
+{% block content %}
+<center><a href="#">&larr;</a><strong>Журнал Відвідування</strong><a href="#">&rarr;</a></center>
+
+<table class="table table-bordered table-striped table-hover table-condensed">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Cтудент</th>
+      <th scope="col">Пн<br><center>1</center></th>
+      <th scope="col">Вт<br><center>2</center></th>
+      <th scope="col">Ср<br><center>3</center></th>
+      <th scope="col">Чт<br><center>4</center></th>
+      <th scope="col">Пт<br><center>5</center></th>
+      <th scope="col">Сб<br><center>6</center></th>
+      <th scope="col">Нд<br><center>7</center></th>
+      <th scope="col">Пн<br><center>8</center></th>
+      <th scope="col">Вт<br><center>9</center></th>
+      <th scope="col">Ср<br>10</th>
+      <th scope="col">Чт<br>11</th>
+      <th scope="col">Пт<br>12</th>
+      <th scope="col">Сб<br>13</th>
+      <th scope="col">Нд<br>14</th>
+      <th scope="col">Пн<br>15</th>
+      <th scope="col">Вт<br>16</th>
+      <th scope="col">Ср<br>17</th>
+      <th scope="col">Чт<br>18</th>
+      <th scope="col">Пт<br>19</th>
+      <th scope="col">Сб<br>20</th>
+      <th scope="col">Нд<br>21</th>
+      <th scope="col">Пн<br>22</th>
+      <th scope="col">Вт<br>23</th>
+      <th scope="col">Ср<br>24</th>
+      <th scope="col">Чт<br>25</th>
+      <th scope="col">Пт<br>26</th>
+      <th scope="col">Сб<br>27</th>
+      <th scope="col">Нд<br>28</th>
+      <th scope="col">Пн<br>29</th>
+      <th scope="col">Вт<br>30</th>
+      <th scope="col">Ср<br>31</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for student in journal %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td><a href="{% url "students_edit" student.id %}">{{ student.name }}</a></td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+      <td>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+          </label>
+        </div>
+      </td>
+    </tr>
+    {% endfor %}
+    <tr>
+     
+  </tbody>
+</table>
+                 
+{% endblock content %}  
+
