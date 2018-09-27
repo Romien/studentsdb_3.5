@@ -22,15 +22,17 @@
         <div class="row" id="header">
             <!-- Logo -->
             <div class="col-8"><h1>Сервіс Обліку Студентів</h1></div>{% block logo %}{% endblock logo %}
-            
+
             {% block group_selector %}
             <div class="col-4" id="group-selector">
                 <strong>Група:</strong>
                 <select>
                     <option value="">Усі студенти</option>
-                    {% for group in groups %}
+                    <option value="">Мтм-21, Віталій Подоба</option>
+                    <option value="">Мтм-22, Роман Макарчик</option>
+                    <!-- {% for group in groups %}
                     <option value="">{{ group.name }} {{ group.leader.name }}</option>
-                    {% endfor %}
+                    {% endfor %} -->
                     
                 </select>
             </div>
@@ -40,17 +42,20 @@
         <!-- End Header -->
 
         <!-- Start Subheader -->
-        <div class="row" id="sub-header">
+        <div class="row" id="sub-header"> 
             <div class="col-12">
                 <ul class="nav nav-tabs">
                   <li class="nav-item">
-                    <a class="nav-link active" href="{% url "home" %}">Студенти</a>
+                    <a class="nav-link {% if request.path == '/' %}active{% endif %}" 
+                    href="{% url "home" %}">Студенти</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url "journal" %}">Відвідування</a>
+                    <a class="nav-link {% if '/journal' in request.path %}active{% endif %}" 
+                    href="{% url "journal" %}">Відвідування</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{% url "groups_list" %}">Групи</a>
+                    <a class="nav-link {% if '/groups' in request.path %}active{% endif %}" 
+                    href="{% url "groups_list" %}">Групи</a>  
                   </li>
                 </ul>
             </div>
