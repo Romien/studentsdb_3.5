@@ -16,7 +16,7 @@ def groups_list(request):
         if request.GET.get('reverse', '') == '1':
             groups = groups.reverse()
 
-    paginator = Paginator(groups, 3)  # Show 25 contacts per page
+    paginator = Paginator(groups, 3)
 
     page = request.GET.get('page')
     try:
