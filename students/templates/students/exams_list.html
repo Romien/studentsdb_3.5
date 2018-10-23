@@ -1,0 +1,46 @@
+{% extends "students/base.html" %}
+
+{% load static %}
+
+{% block meta_title %}Розклад Іспитів{% endblock meta_title %}
+
+{% block title %}Розклад Іспитів{% endblock title %}
+
+{% block content %}
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col"><a href="">№</th>
+              <th scope="col"><a href="">Назва</th>
+              <th scope="col"><a href="">Дата і час</th>
+              <th scope="col"><a href="">Викладач</th>
+              <th scope="col"><a href="">Група</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                {% for exam in exams %}
+                  <td>{{ forloop.counter }}</td>
+                  <td><a href="{% url "exams_edit" exam.id %}">{{ exam.title }}</td>
+                  <td>{{ exam.date }}</td>
+                  <td>{{ exam.teacher }}</td>
+                  <td>{{ exam.group }}</td>
+                  <td>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-light dropdown-toggle" 
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Дія
+                      </button>
+                     <div class="dropdown-menu">
+                      <a class="dropdown-item" href="{% url "exams_edit" exam.id %}">Редагувати</a>
+                      <a class="dropdown-item" href="{% url "exams_delete" exam.id %}">Видалити</a>
+                   </div>
+                </div>
+              </td>
+            </tr>
+                {% endfor %}
+          </tbody>
+        </table>
+      
+{% endblock content %}
+

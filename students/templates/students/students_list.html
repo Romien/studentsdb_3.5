@@ -12,7 +12,7 @@
                  Студента</button></a>
                 <!-- Start Students Listing -->
                 {% if students %}
-                <table class="table">
+                <table class="table table-striped">
                     {% with order_by=request.GET.order_by reverse=request.GET.reverse %}
                     <thead>
                         <tr>
@@ -48,17 +48,17 @@
                                <img src="{% static "img/default_user.png" %}" height="30" width="30" />
                                {% endif %}
                             </td>
-                            <td><a href="#">{{ student.last_name }}</td>
-                            <td><a href="#">{{ student.first_name }}</td>
+                            <td><a href="{% url "students_edit" student.id %}">{{ student.last_name }}</td>
+                            <td><a href="{% url "students_edit" student.id %}">{{ student.first_name }}</td>
                             <td>{{ student.ticket }}</td>
                             <td>
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-default dropdown-toggle" 
+                                    <button type="button" class="btn btn-light dropdown-toggle" 
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Дія
                                     </button>
                                    <div class="dropdown-menu">
                                     <a class="dropdown-item" href="{% url "students_edit" student.id %}">Редагувати</a>
-                                    <a class="dropdown-item" href="{% url "students_attend" student.id %}">Відвідування</a>
+                                    <a class="dropdown-item" href="{% url "journal_attend" student.id %}">Відвідування</a>
                                     <a class="dropdown-item" href="{% url "students_delete" student.id %}">Видалити</a>
                                    </div>
                                 </div>

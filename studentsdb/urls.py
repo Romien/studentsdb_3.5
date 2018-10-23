@@ -32,8 +32,8 @@ urlpatterns = [
     url(r'^students/(?P<sid>[0-9]+)/edit/$',
         views.students_edit, name='students_edit'),
 
-    url(r'^students/(?P<sid>[0-9]+)/attend/$',
-        views.students_attend, name='students_attend'),
+    # url(r'^students/(?P<sid>[0-9]+)/attend/$',
+    #     views.students_attend, name='students_attend'),
     url(r'^students/(?P<sid>[0-9]+)/delete/$',
         views.students_delete, name='students_delete'),
 
@@ -48,6 +48,15 @@ urlpatterns = [
 
     # Journal urls
     url(r'^journal/$', views.journal, name='journal'),
+    url(r'^journal/(?P<sid>[0-9]+)/attend/$',
+        views.journal_attend, name='journal_attend'),
+
+    # Exams urls
+    url(r'^exams/$', views.exams_list, name='exams_list'),
+    url(r'^exams/(?P<eid>[0-9]+)/edit/$',
+        views.exams_edit, name='exams_edit'),
+    url(r'^exams/(?P<eid>[0-9]+)/delete/$',
+        views.exams_delete, name='exams_delete'),
 
 
     url(r'^admin/', admin.site.urls),

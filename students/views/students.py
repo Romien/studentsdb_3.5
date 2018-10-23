@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from ..models import Student
+from ..models.student import Student
 
 
 def students_list(request):
@@ -58,8 +58,8 @@ def students_edit(request, sid):
     return HttpResponse('students %s Edit Form' % sid)
 
 
-def students_attend(request, sid):
-    return HttpResponse('student %s Attend Form' % sid)
+# def students_attend(request, sid):
+#    return HttpResponse('student %s Attend Form' % sid)  - поміняв на journal_attend
 
 
 def students_delete(request, sid):
