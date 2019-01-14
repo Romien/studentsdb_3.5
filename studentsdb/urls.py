@@ -53,6 +53,7 @@ urlpatterns = [
 
     # Exams urls
     url(r'^exams/$', views.exams_list, name='exams_list'),
+    url(r'^exams/add/$', views.exams_add, name='exams_add'),
     url(r'^exams/(?P<eid>[0-9]+)/edit/$',
         views.exams_edit, name='exams_edit'),
     url(r'^exams/(?P<eid>[0-9]+)/delete/$',

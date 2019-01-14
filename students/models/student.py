@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.db import models
 
 # Create your models here.
@@ -25,5 +27,9 @@ class Student(models.Model):
         'Group', verbose_name=u"Група", blank=False, null=True, on_delete=models.PROTECT)
     notes = models.TextField(blank=True, verbose_name=u"Додаткові нотатки")
 
-    def __str__(self):
-        return '{} {}'.format(self.first_name, self.last_name)
+    # def __str__(self):
+    #    return '{} {}'.format(self.first_name, self.last_name)
+
+    def __unicode__(self):
+        return u"%s %s" % (self.first_name, self.last_name)
+        

@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.db import models
 
 # Create your models here.
@@ -16,8 +18,14 @@ class Group(models.Model):
     leader = models.OneToOneField(
         'Student', verbose_name=u"Староста", blank=True, null=True, on_delete=models.SET_NULL)
 
-    def __str__(self):
+    # def __str__(self):
+    #     if self.leader:
+    #         return '{} {} {}'.format(self.title, self.leader.first_name, self.leader.last_name)
+    #     else:
+    #         return '{}'.format(self.title,)
+
+    def __unicode__(self):
         if self.leader:
-            return '{} {} {}'.format(self.title, self.leader.first_name, self.leader.last_name)
+            return u"%s %s %s" % (self.title, self.leader.first_name, self.leader.last_name)
         else:
-            return '{}'.format(self.title,)
+            return u"%s" % (self.title,)
